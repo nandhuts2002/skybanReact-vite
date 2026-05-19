@@ -7,7 +7,7 @@ const solutions = [
     title: 'uPVC Rain Gutters',
     desc: 'Our high-performance uPVC rain gutters are designed for the heaviest tropical rains. They feature a leak-proof interlocking system, UV stabilization for long life, and high-flow capacity to protect your building foundation.',
     features: ['Leak Proof Joints', 'UV Stabilized Material', 'High Flow Capacity', 'Low Maintenance'],
-    image: 'https://images.unsplash.com/photo-1621905252507-b354bcadc0d6?auto=format&fit=crop&q=80&w=1200'
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200'
   },
   {
     id: 'ventilation',
