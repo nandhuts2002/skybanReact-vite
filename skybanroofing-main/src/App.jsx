@@ -16,7 +16,7 @@ import SolutionsPage from './pages/SolutionsPage';
 
 function App() {
   return (
-    <BrowserRouter basename="/skybanReact-vite">
+    <BrowserRouter>
 
 
       {/* Floating Animated Call Button */}
