@@ -68,10 +68,6 @@ const Navbar = () => {
                 height: scrolled ? '42px' : '56px', 
                 width: 'auto', 
                 transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-                mixBlendMode: 'screen',
-                filter: 'brightness(1.1) contrast(1.1)',
-                WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 90%)',
-                maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 90%)',
               }} 
             />
           </motion.div>
