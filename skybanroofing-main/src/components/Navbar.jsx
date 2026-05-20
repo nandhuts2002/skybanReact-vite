@@ -65,7 +65,7 @@ const Navbar = () => {
               src={logo} 
               alt="Skyban Roofing Systems" 
               style={{ 
-                height: scrolled ? '42px' : '56px', 
+                height: scrolled ? '60px' : '80px', 
                 width: 'auto', 
                 transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
               }} 
