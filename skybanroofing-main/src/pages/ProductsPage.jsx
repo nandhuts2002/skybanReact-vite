@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
@@ -61,37 +61,32 @@ export default function ProductsPage() {
         </motion.div>
       </section>
 
-      {/* ── Scrollable Collections ── */}
-      <section style={{ padding: '0 0 100px', position: 'relative' }}>
+      {/* ── Vertical Collections ── */}
+      <section style={{ padding: '0 24px 100px', position: 'relative' }}>
         <div 
-          className="no-scrollbar"
           style={{ 
             display: 'flex', 
-            gap: '40px', 
-            overflowX: 'auto', 
-            padding: '40px 10vw',
-            scrollSnapType: 'x mandatory',
-            WebkitOverflowScrolling: 'touch',
-            cursor: 'grab'
+            flexDirection: 'column',
+            gap: '80px', 
+            maxWidth: '1200px',
+            margin: '0 auto',
           }}
         >
           {collections.map((col, index) => (
             <motion.div 
               key={col.id}
-              initial={{ opacity: 0, x: 50, scale: 0.9 }}
-              whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: false, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               style={{ 
-                minWidth: 'min(85vw, 900px)',
-                scrollSnapAlign: 'center',
                 background: 'rgba(255,255,255,0.03)',
                 borderRadius: '32px',
                 border: '1px solid rgba(255,255,255,0.08)',
                 overflow: 'hidden',
                 backdropFilter: 'blur(20px)',
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))',
                 gap: '0',
                 boxShadow: '0 40px 100px rgba(0,0,0,0.4)',
                 position: 'relative'
@@ -152,19 +147,7 @@ export default function ProductsPage() {
             </motion.div>
           ))}
         </div>
-
-        {/* Scroll Indicator */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: '40px' }}>
-          {collections.map((_, i) => (
-            <div key={i} style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgba(207,162,93,0.3)' }} />
-          ))}
-        </div>
       </section>
-
-      <style>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
     </div>
   );
 }

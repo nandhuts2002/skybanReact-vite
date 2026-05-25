@@ -26,35 +26,6 @@ const Footer = () => {
             <p style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '14px', lineHeight: 1.75, maxWidth: '280px', marginBottom: '28px' }}>
               Setting the standard for luxury roofing systems with the unmatched durability of stone-coated steel.
             </p>
-            <div style={{ display: 'flex', gap: '12px' }}>
-              {['Twitter', 'LinkedIn', 'Instagram', 'YouTube'].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  style={{
-                    background: 'rgba(255,255,255,0.08)',
-                    border: '1px solid rgba(255,255,255,0.12)',
-                    borderRadius: '50%',
-                    width: '36px',
-                    height: '36px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'rgba(255,255,255,0.6)',
-                    fontFamily: 'Inter',
-                    fontSize: '10px',
-                    fontWeight: 600,
-                    textDecoration: 'none',
-                    transition: 'all 0.2s',
-                    letterSpacing: '0',
-                  }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = '#cfa25d'; e.currentTarget.style.color = 'white'; e.currentTarget.style.borderColor = '#cfa25d'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}
-                >
-                  {social[0]}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Collections */}

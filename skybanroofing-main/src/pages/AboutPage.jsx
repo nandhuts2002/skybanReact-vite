@@ -1,12 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const team = [
-  { name: 'James Harlow', role: 'Founder & CEO', exp: '30 yrs experience' },
-  { name: 'Sandra Cruz',  role: 'Head of Operations', exp: '18 yrs experience' },
-  { name: 'David Yuen',   role: 'Lead Engineer', exp: '22 yrs experience' },
-  { name: 'Priya Mehta',  role: 'Quality Director', exp: '15 yrs experience' },
-];
+
 
 const milestones = [
   { year: '1998', event: 'Founded in Melbourne, Australia with a vision for premium steel roofing.' },
@@ -56,37 +51,7 @@ export default function AboutPage() {
         ))}
       </section>
 
-      {/* ── Team ── */}
-      <section style={{ padding: '60px 24px 100px', maxWidth: '1100px', margin: '0 auto' }}>
-        <motion.div {...fadeUp()} style={{ textAlign: 'center', marginBottom: '56px' }}>
-          <p style={{ fontFamily: 'Inter', fontWeight: 500, fontSize: '12px', letterSpacing: '4px', color: '#cfa25d', textTransform: 'uppercase', marginBottom: '12px' }}>The People Behind Skyban</p>
-          <h2 style={{ fontFamily: 'Playfair Display', fontWeight: 700, fontSize: 'clamp(30px, 4vw, 50px)', color: 'white' }}>Meet Our Team</h2>
-        </motion.div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '28px' }}>
-          {team.map((member, i) => (
-            <motion.div key={i} {...fadeUp(i * 0.12)}
-              style={{
-                background: 'rgba(255,255,255,0.05)',
-                backdropFilter: 'blur(16px)',
-                border: '1px solid rgba(207,162,93,0.15)',
-                borderRadius: '16px',
-                padding: '36px 24px',
-                textAlign: 'center',
-              }}
-              whileHover={{ y: -6, borderColor: 'rgba(207,162,93,0.4)' }}
-              transition={{ duration: 0.25 }}
-            >
-              {/* Avatar placeholder */}
-              <div style={{ width: '72px', height: '72px', borderRadius: '50%', background: 'linear-gradient(135deg, #cfa25d, #b88c4b)', margin: '0 auto 20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '28px', fontFamily: 'Playfair Display', color: 'white', fontWeight: 700 }}>
-                {member.name[0]}
-              </div>
-              <h3 style={{ fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '18px', color: 'white', marginBottom: '6px' }}>{member.name}</h3>
-              <p style={{ fontFamily: 'Inter', fontSize: '12px', fontWeight: 600, color: '#cfa25d', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '8px' }}>{member.role}</p>
-              <p style={{ fontFamily: 'Inter', fontSize: '12px', color: 'rgba(255,255,255,0.5)' }}>{member.exp}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
+
     </div>
   );
 }
