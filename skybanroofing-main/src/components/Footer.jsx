@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
+import logo from '../assets/skyban-logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,17 +12,8 @@ const Footer = () => {
         <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '48px', marginBottom: '64px' }}>
           {/* Brand */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px' }}>
-              <div style={{ width: '44px', height: '34px' }}>
-                <svg viewBox="0 0 100 80" fill="none" style={{ width: '100%', height: '100%' }}>
-                  <path d="M50 10 L90 75 L10 75 Z" fill="#cfa25d" />
-                  <path d="M50 10 L65 75 L35 75 Z" fill="#0a0a0a" opacity="0.3" />
-                </svg>
-              </div>
-              <div>
-                <div style={{ fontFamily: 'Italiana', fontWeight: 400, fontSize: '28px', letterSpacing: '4px', color: 'white', lineHeight: 1 }}>SKYBAN</div>
-                <div style={{ fontFamily: 'Inter', fontWeight: 700, fontSize: '9px', letterSpacing: '5px', color: '#cfa25d', textTransform: 'uppercase', marginTop: '3px' }}>ROOFING SYSTEMS</div>
-              </div>
+            <div style={{ marginBottom: '32px' }}>
+              <img src={logo} alt="Skyban Roofing Systems" style={{ height: '60px', width: 'auto' }} />
             </div>
             <p style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '14px', lineHeight: 1.75, maxWidth: '280px', marginBottom: '28px' }}>
               Setting the standard for luxury roofing systems with the unmatched durability of stone-coated steel.
