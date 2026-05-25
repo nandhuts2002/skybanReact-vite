@@ -83,12 +83,12 @@ const projects = [
 ];
 
 const whyFeatures = [
-  { icon: '🛡️', title: 'Superior Durability', desc: 'Built to withstand harsh weather and time.' },
-  { icon: '⚡', title: 'Lightweight & Strong', desc: 'Easy to install, strong enough to last.' },
-  { icon: '🌡️', title: 'Heat & Sound Insulation', desc: 'Keep your home cooler and quieter.' },
-  { icon: '✨', title: 'Low Maintenance', desc: 'Long-lasting performance with minimal care.' },
-  { icon: '🎨', title: 'Wide Range of Designs', desc: 'Styles and colors to match every architecture.' },
-  { icon: '🌿', title: 'Eco Friendly', desc: 'Sustainable materials for a better tomorrow.' },
+  { icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>, title: 'Superior Durability', desc: 'Built to withstand harsh weather and time.' },
+  { icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>, title: 'Lightweight & Strong', desc: 'Easy to install, strong enough to last.' },
+  { icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>, title: 'Heat & Sound Insulation', desc: 'Keep your home cooler and quieter.' },
+  { icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>, title: 'Low Maintenance', desc: 'Long-lasting performance with minimal care.' },
+  { icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>, title: 'Wide Range of Designs', desc: 'Styles and colors to match every architecture.' },
+  { icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>, title: 'Eco Friendly', desc: 'Sustainable materials for a better tomorrow.' },
 ];
 
 /* ─────────────────────────────────────────────────────────────── */
@@ -123,20 +123,6 @@ const Features = () => {
             <p style={{ fontSize: '15px', fontWeight: 400, color: '#666', lineHeight: 1.75, marginBottom: '36px', maxWidth: '380px' }}>
               High performance roofing tiles and uPVC rain gutters that combine strength, style and long lasting protection.
             </p>
-            <button
-              onClick={() => navigate('/products')}
-              style={{
-                background: '#0a0a0a', color: 'white', border: 'none',
-                padding: '14px 28px', fontSize: '12px', fontWeight: 700,
-                letterSpacing: '2px', cursor: 'pointer',
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                transition: 'all 0.3s',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = '#cfa25d'; e.currentTarget.style.color = '#0a0a0a'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#0a0a0a'; e.currentTarget.style.color = 'white'; }}
-            >
-              VIEW ALL PRODUCTS <span style={{ fontSize: '14px' }}>→</span>
-            </button>
           </motion.div>
 
           {/* Right: two main category cards */}
@@ -220,13 +206,15 @@ const Features = () => {
                   <button
                     onClick={e => { e.stopPropagation(); navigate(cat.path); }}
                     style={{
-                      background: 'none', border: 'none', padding: 0,
-                      color: '#cfa25d', fontSize: '12px', fontWeight: 700, letterSpacing: '1.5px',
-                      cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px',
-                      textTransform: 'uppercase'
+                      background: '#0a0a0a', color: 'white', border: 'none',
+                      padding: '12px 24px', fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px',
+                      cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px',
+                      textTransform: 'uppercase', transition: 'all 0.3s'
                     }}
+                    onMouseEnter={e => { e.currentTarget.style.background = '#cfa25d'; e.currentTarget.style.color = '#0a0a0a'; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = '#0a0a0a'; e.currentTarget.style.color = 'white'; }}
                   >
-                    EXPLORE MORE <span style={{ transition: 'transform 0.3s' }}>→</span>
+                    VIEW DETAILS <span style={{ fontSize: '14px', transition: 'transform 0.3s' }}>→</span>
                   </button>
                 </div>
               </motion.div>
@@ -234,35 +222,7 @@ const Features = () => {
           </div>
         </div>
 
-        {/* All 5 collections row */}
-        <div className="collections-row" style={{ 
-          maxWidth: '1300px', 
-          margin: '48px auto 0', 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-          gap: '16px' 
-        }}>
-          {collections.map((col, i) => (
-            <motion.div
-              key={col.id}
-              {...fadein(0.05 * i)}
-              style={{ cursor: 'pointer', overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.07)', background: '#f8f8f8', transition: 'transform 0.3s' }}
-              whileHover={{ y: -4 }}
-              onClick={() => navigate(`/products#${col.id}`)}
-            >
-              <div style={{ height: '130px', overflow: 'hidden' }}>
-                <img src={col.image} alt={col.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
-                  onMouseEnter={e => e.target.style.transform = 'scale(1.08)'}
-                  onMouseLeave={e => e.target.style.transform = 'scale(1)'}
-                />
-              </div>
-              <div style={{ padding: '14px 16px' }}>
-                <p style={{ fontSize: '9px', fontWeight: 700, letterSpacing: '2.5px', color: '#cfa25d', textTransform: 'uppercase', marginBottom: '4px' }}>{col.tag}</p>
-                <p style={{ fontSize: '13px', fontWeight: 700, color: '#0a0a0a' }}>{col.name}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+
       </section>
 
       {/* ══════════════════════════════════════════════════════════════
@@ -282,34 +242,7 @@ const Features = () => {
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 autoPlay muted loop playsInline
               />
-              {/* Play button overlay */}
-              <div style={{
-                position: 'absolute', inset: 0,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                background: 'rgba(0,0,0,0.2)',
-              }}>
-                <button
-                  onClick={() => {
-                    if (videoRef.current) {
-                      if (isPlaying) { videoRef.current.pause(); } else { videoRef.current.play(); }
-                      setIsPlaying(!isPlaying);
-                    }
-                  }}
-                  style={{
-                    width: '64px', height: '64px', borderRadius: '50%',
-                    background: 'rgba(255,255,255,0.15)', border: '2px solid rgba(255,255,255,0.5)',
-                    cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    backdropFilter: 'blur(4px)', transition: 'all 0.3s',
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.background = '#cfa25d'; e.currentTarget.style.borderColor = '#cfa25d'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; }}
-                >
-                  {isPlaying
-                    ? <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-                    : <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
-                  }
-                </button>
-              </div>
+
             </div>
           </motion.div>
 
@@ -358,10 +291,10 @@ const Features = () => {
         <div style={{ maxWidth: '1300px', margin: '0 auto' }}>
           
           {/* Header row */}
-          <div className="why-header-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'end', marginBottom: '56px' }}>
+          <div className="why-header-grid" style={{ marginBottom: '56px', maxWidth: '800px' }}>
             <motion.div {...fadein(0)}>
               <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '4px', color: '#cfa25d', textTransform: 'uppercase', marginBottom: '16px' }}>Why Choose Skyban</p>
-              <h2 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(28px, 3vw, 44px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.25 }}>
+              <h2 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(28px, 3vw, 44px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.25, marginBottom: '20px' }}>
                 Engineered for <span style={{ color: '#cfa25d' }}>Strength.</span><br/>
                 Designed for <span style={{ color: '#cfa25d' }}>Beauty.</span>
               </h2>
@@ -426,16 +359,34 @@ const Features = () => {
           </div>
 
           {/* Project grid */}
-          <div className="projects-grid" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-            gap: '16px' 
+          <div className="projects-grid hide-scrollbar" style={{ 
+            display: 'flex', 
+            overflowX: 'auto', 
+            gap: '24px',
+            paddingBottom: '24px',
+            scrollSnapType: 'x mandatory',
+            WebkitOverflowScrolling: 'touch',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
           }}>
+            <style>{`
+              .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
             {projects.map((proj, i) => (
               <motion.div
                 key={i}
                 {...fadein(0.08 * i)}
-                style={{ position: 'relative', overflow: 'hidden', cursor: 'pointer', aspectRatio: '4/3' }}
+                style={{ 
+                  flex: '0 0 auto',
+                  width: 'clamp(280px, 30vw, 380px)',
+                  position: 'relative', 
+                  overflow: 'hidden', 
+                  cursor: 'pointer', 
+                  aspectRatio: '4/3',
+                  scrollSnapAlign: 'start'
+                }}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               >
@@ -463,18 +414,18 @@ const Features = () => {
           5. READY TO ELEVATE — CTA
           ══════════════════════════════════════════════════════════════ */}
       <section style={{ background: '#f4f1ec', padding: 'clamp(48px,6vw,80px) clamp(24px,6vw,100px)' }}>
-        <div className="cta-grid" style={{ maxWidth: '1300px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center' }}>
-          <motion.div {...fadein(0)}>
-            <h2 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(26px, 3vw, 40px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.25 }}>
+        <div className="cta-grid" style={{ maxWidth: '1300px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '40px' }}>
+          <motion.div {...fadein(0)} style={{ flex: '1 1 400px' }}>
+            <h2 style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: 'clamp(26px, 3vw, 40px)', fontWeight: 700, color: '#0a0a0a', lineHeight: 1.25, marginBottom: '16px' }}>
               Ready to elevate<br/>your roof?
             </h2>
-          </motion.div>
-          <motion.div {...fadein(0.1)} style={{ display: 'flex', alignItems: 'center', gap: '32px', flexWrap: 'wrap' }}>
-            <p style={{ fontSize: '15px', fontWeight: 400, color: '#555', lineHeight: 1.75, flex: 1 }}>
+            <p style={{ fontSize: '15px', fontWeight: 400, color: '#555', lineHeight: 1.75, maxWidth: '400px' }}>
               Get expert advice and the best roofing solution for your home or project.
             </p>
+          </motion.div>
+          <motion.div {...fadein(0.1)} style={{ flexShrink: 0 }}>
             <button
-              onClick={() => navigate('/contact')}
+              onClick={() => navigate('/quote')}
               style={{
                 background: '#cfa25d', color: '#0a0a0a', border: 'none',
                 padding: '16px 32px', fontSize: '13px', fontWeight: 700,

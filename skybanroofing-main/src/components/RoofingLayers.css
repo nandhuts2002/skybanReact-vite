@@ -129,13 +129,12 @@
     width: 420px;
     height: 250px;
     transform: perspective(1500px) rotateX(20deg) rotateY(-15deg) translateY(40px) translateX(-40px);
-    transform-style: preserve-3d;
 }
 
 .layer-item {
     position: absolute;
     width: 100%;
-    height: 120px;
+    height: var(--layer-height, 85px);
     left: 0;
     bottom: 0;
     /* Rounded Deep S-Curve (Tile Profile) */
@@ -150,9 +149,11 @@
         33% 97%, 30% 95%, 27% 93%, 25% 91%, 22% 93%, 18% 96%, 14% 98%,
         10% 96%, 6% 93%, 3% 91%, 0% 91%, 0% 98%
     );
+    transform: translateY(var(--y-offset, 0px)) scale(var(--scale, 1));
     transition: transform var(--transition-speed) var(--easing), 
                 filter 0.3s ease, 
                 box-shadow 0.3s ease;
+    transition-delay: var(--delay, 0ms);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -168,9 +169,14 @@
     );
 }
 
+.layers-stack-layers:hover .layer-item {
+    transition-delay: 0ms !important;
+    transition-duration: 0.3s !important;
+}
+
 .layer-item:hover {
+    --scale: 1.05;
     filter: brightness(1.2);
-    transform: scale(1.05) !important;
     z-index: 100 !important;
 }
 
@@ -186,6 +192,16 @@
     clip-path: inherit;
     z-index: -1;
 }
+
+/* Default stack offsets (when collapsed) */
+.layer-id-1 { --y-offset: 0px; }
+.layer-id-2 { --y-offset: 0px; }
+.layer-id-3 { --y-offset: 0px; }
+.layer-id-4 { --y-offset: 0px; }
+.layer-id-5 { --y-offset: 0px; }
+.layer-id-6 { --y-offset: 0px; }
+.layer-id-7 { --y-offset: 0px; }
+.layer-id-8 { --y-offset: 0px; }
 
 /* Material Specific Textures */
 .layer-id-1 { /* Overglaze */
@@ -226,15 +242,14 @@
 .layer-id-7 { background-color: var(--color-alloy); z-index: 2; }
 .layer-id-8 { background-color: var(--color-primer); z-index: 1; }
 
-/* Exploded State */
-.is-exploded .layer-id-1 { transform: translateY(-420px); }
-.is-exploded .layer-id-2 { transform: translateY(-360px); }
-.is-exploded .layer-id-3 { transform: translateY(-300px); }
-.is-exploded .layer-id-4 { transform: translateY(-240px); }
-.is-exploded .layer-id-5 { transform: translateY(-180px); }
-.is-exploded .layer-id-6 { transform: translateY(-120px); }
-.is-exploded .layer-id-7 { transform: translateY(-60px); }
-.is-exploded .layer-id-8 { transform: translateY(0); }
+.is-exploded .layer-id-1 { --y-offset: -350px; }
+.is-exploded .layer-id-2 { --y-offset: -300px; }
+.is-exploded .layer-id-3 { --y-offset: -250px; }
+.is-exploded .layer-id-4 { --y-offset: -200px; }
+.is-exploded .layer-id-5 { --y-offset: -150px; }
+.is-exploded .layer-id-6 { --y-offset: -100px; }
+.is-exploded .layer-id-7 { --y-offset: -50px; }
+.is-exploded .layer-id-8 { --y-offset: 0px; }
 
 /* SVG Connector Lines */
 .connector-svg-layers {
@@ -322,15 +337,19 @@
         transform: translateX(-60px) translateY(120px);
     }
     
+    .layer-item {
+        --layer-height: 70px;
+    }
+    
     /* Scale down explosion for tablets to avoid overlap */
-    .is-exploded .layer-id-1 { transform: translateY(-280px); }
-    .is-exploded .layer-id-2 { transform: translateY(-240px); }
-    .is-exploded .layer-id-3 { transform: translateY(-200px); }
-    .is-exploded .layer-id-4 { transform: translateY(-160px); }
-    .is-exploded .layer-id-5 { transform: translateY(-120px); }
-    .is-exploded .layer-id-6 { transform: translateY(-80px); }
-    .is-exploded .layer-id-7 { transform: translateY(-40px); }
-    .is-exploded .layer-id-8 { transform: translateY(0); }
+    .is-exploded .layer-id-1 { --y-offset: -280px; }
+    .is-exploded .layer-id-2 { --y-offset: -240px; }
+    .is-exploded .layer-id-3 { --y-offset: -200px; }
+    .is-exploded .layer-id-4 { --y-offset: -160px; }
+    .is-exploded .layer-id-5 { --y-offset: -120px; }
+    .is-exploded .layer-id-6 { --y-offset: -80px; }
+    .is-exploded .layer-id-7 { --y-offset: -40px; }
+    .is-exploded .layer-id-8 { --y-offset: 0px; }
     
     .labels-container-layers {
         right: 20px;
@@ -351,15 +370,19 @@
         margin-top: 10px;
     }
     
+    .layer-item {
+        --layer-height: 55px;
+    }
+    
     /* Scale down explosion even more for mobile phones */
-    .is-exploded .layer-id-1 { transform: translateY(-210px); }
-    .is-exploded .layer-id-2 { transform: translateY(-180px); }
-    .is-exploded .layer-id-3 { transform: translateY(-150px); }
-    .is-exploded .layer-id-4 { transform: translateY(-120px); }
-    .is-exploded .layer-id-5 { transform: translateY(-90px); }
-    .is-exploded .layer-id-6 { transform: translateY(-60px); }
-    .is-exploded .layer-id-7 { transform: translateY(-30px); }
-    .is-exploded .layer-id-8 { transform: translateY(0); }
+    .is-exploded .layer-id-1 { --y-offset: -210px; }
+    .is-exploded .layer-id-2 { --y-offset: -180px; }
+    .is-exploded .layer-id-3 { --y-offset: -150px; }
+    .is-exploded .layer-id-4 { --y-offset: -120px; }
+    .is-exploded .layer-id-5 { --y-offset: -90px; }
+    .is-exploded .layer-id-6 { --y-offset: -60px; }
+    .is-exploded .layer-id-7 { --y-offset: -30px; }
+    .is-exploded .layer-id-8 { --y-offset: 0px; }
 
     .labels-container-layers {
         width: 110px;

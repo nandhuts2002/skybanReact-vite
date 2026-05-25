@@ -11,6 +11,7 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ProductsPage from './pages/ProductsPage';
 import ContactPage from './pages/ContactPage';
+import QuotePage from './pages/QuotePage';
 import GalleryPage from './pages/GalleryPage';
 import SolutionsPage from './pages/SolutionsPage';
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/contact"  element={<ContactPage />} />
+          <Route path="/quote"    element={<QuotePage />} />
           <Route path="/gallery"  element={<GalleryPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
         </Routes>

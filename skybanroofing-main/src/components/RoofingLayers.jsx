@@ -102,10 +102,9 @@ const RoofingLayers = () => {
         <div className="content-side-layers">
           <h2>SOPHISTICATED STYLE WITH THE STRENGTH OF STONE-COATED STEEL</h2>
           <p>
-            Breathtaking designs are what you see at first glance, but underneath are layers of pure protection. 
-            Skyban's proprietary stone-coating process bonds natural stone granules to high-grade steel sheets, 
-            delivering a wide range of styles, colours, and textures — each backed by the strength of multi-layered steel. 
-            Engineered for South India's demanding tropical climate since 2006.
+            Skyban's proprietary stone-coating bonds natural stone granules to high-grade steel, 
+            delivering breathtaking styles backed by multi-layered strength. 
+            Engineered for South India's tropical climate since 2006.
           </p>
           
           <button className="cta-btn-layers" onClick={() => window.location.href = '/skybanroofing/contact'}>
@@ -128,7 +127,7 @@ const RoofingLayers = () => {
                   ref={(el) => (layerRefs.current[i] = el)}
                   onMouseEnter={() => setHighlightedIndex(i)}
                   onMouseLeave={() => setHighlightedIndex(null)}
-                  style={{ transitionDelay: `${i * 60}ms` }}
+                  style={{ '--delay': `${i * 60}ms` }}
                 />
               ))}
             </div>

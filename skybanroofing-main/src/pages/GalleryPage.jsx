@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { galleryItems } from '../data/gallery';
 
 const categories = ['ALL', 'RESIDENTIAL', 'COMMERCIAL'];
@@ -11,6 +12,7 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function GalleryPage() {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('ALL');
 
   const filteredItems = activeCategory === 'ALL' 
@@ -122,7 +124,7 @@ export default function GalleryPage() {
           <h2 style={{ fontFamily: 'Playfair Display', fontSize: '32px', marginBottom: '20px' }}>Inspired by these projects?</h2>
           <p style={{ marginBottom: '32px', color: 'rgba(255,255,255,0.7)' }}>Let's discuss how we can elevate your property with Skyban roofing.</p>
           <button
-            onClick={() => window.location.href = '/skybanroofing/contact'}
+            onClick={() => navigate('/quote')}
             style={{
               background: '#cfa25d',
               color: '#0a0a0a',

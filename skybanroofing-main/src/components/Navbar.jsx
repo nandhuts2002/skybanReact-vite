@@ -6,11 +6,11 @@ import logo from '../assets/skyban-logo.png';
 
 const links = [
   { label: 'HOME', to: '/' },
-  { label: 'ABOUT US', to: '/about' },
+  { label: 'ABOUT US', to: '#footer' },
   { label: 'PRODUCTS', to: '/products' },
   { label: 'SOLUTIONS', to: '/solutions' },
   { label: 'GALLERY', to: '/gallery' },
-  { label: 'CONTACT US', to: '/contact' },
+  { label: 'CONTACT US', to: '#footer' },
 ];
 
 const Navbar = () => {
@@ -78,7 +78,23 @@ const Navbar = () => {
           {links.map((link) => {
             const isActive = location.pathname === link.to;
             return (
-              <Link key={link.to} to={link.to} style={{ textDecoration: 'none' }}>
+              <Link 
+                key={link.to} 
+                to={link.to} 
+                style={{ textDecoration: 'none' }}
+                onClick={(e) => {
+                  if (link.to.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.getElementById(link.to.substring(1));
+                    if (target) {
+                      target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  } else if (link.to === '/' && location.pathname === '/') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
+              >
                 <span style={{
                   color: isActive ? '#cfa25d' : 'rgba(255,255,255,0.82)',
                   fontFamily: 'Inter', fontWeight: 600, fontSize: '11px',
@@ -102,7 +118,7 @@ const Navbar = () => {
         {/* CTA Button */}
         <div className="hidden md:block">
           <button
-            onClick={() => navigate('/contact')}
+            onClick={() => navigate('/quote')}
             style={{
               background: 'transparent',
               color: 'white',
@@ -159,14 +175,33 @@ const Navbar = () => {
           >
             {links.map((link, i) => (
               <motion.div key={link.to} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
-                <Link to={link.to} style={{ textDecoration: 'none', color: 'white', fontFamily: 'Inter', fontSize: '20px', fontWeight: 600 }}>
+                <Link 
+                  to={link.to} 
+                  style={{ textDecoration: 'none', color: 'white', fontFamily: 'Inter', fontSize: '20px', fontWeight: 600 }}
+                  onClick={(e) => {
+                    if (link.to.startsWith('#')) {
+                      e.preventDefault();
+                      setMenuOpen(false);
+                      const target = document.getElementById(link.to.substring(1));
+                      if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    } else if (link.to === '/' && location.pathname === '/') {
+                      e.preventDefault();
+                      setMenuOpen(false);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                      setMenuOpen(false);
+                    }
+                  }}
+                >
                   {link.label}
                 </Link>
               </motion.div>
             ))}
             <motion.button
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
-              onClick={() => { setMenuOpen(false); navigate('/contact'); }}
+              onClick={() => { setMenuOpen(false); navigate('/quote'); }}
               style={{ marginTop: '16px', background: '#cfa25d', color: '#0a0a0a', border: 'none', padding: '14px 32px', fontSize: '14px', fontWeight: 700, fontFamily: 'Inter', letterSpacing: '2px', cursor: 'pointer' }}
             >
               GET A QUOTE
