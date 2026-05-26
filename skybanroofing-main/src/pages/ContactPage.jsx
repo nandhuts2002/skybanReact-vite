@@ -8,17 +8,48 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, delay },
 });
 
+const MapPinIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+    <circle cx="12" cy="10" r="3"></circle>
+  </svg>
+);
+
+const PhoneIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+  </svg>
+);
+
+const MailIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+  </svg>
+);
+
+const FileTextIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+    <polyline points="14 2 14 8 20 8"></polyline>
+    <line x1="16" y1="13" x2="8" y2="13"></line>
+    <line x1="16" y1="17" x2="8" y2="17"></line>
+    <polyline points="10 9 9 9 8 9"></polyline>
+  </svg>
+);
+
 const inputStyle = {
   width: '100%',
-  background: 'rgba(255,255,255,0.06)',
-  border: '1px solid rgba(255,255,255,0.14)',
-  borderRadius: '10px',
+  background: 'rgba(255,255,255,0.03)',
+  border: '1px solid rgba(255,255,255,0.08)',
+  borderRadius: '8px',
   padding: '14px 18px',
   fontFamily: 'Inter',
   fontSize: '14px',
   color: 'white',
   outline: 'none',
-  transition: 'border-color 0.2s',
+  transition: 'all 0.3s ease',
+  boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)'
 };
 
 export default function ContactPage() {
@@ -47,7 +78,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div style={{ paddingTop: '100px', minHeight: '100vh' }}>
+    <div style={{ paddingTop: '100px', minHeight: '100vh', background: '#0a1118', overflowX: 'hidden' }}>
       <section style={{ padding: '80px 24px 60px', textAlign: 'center' }}>
         <motion.div {...fadeUp()}>
           <p style={{ fontFamily: 'Inter', fontWeight: 500, fontSize: '12px', letterSpacing: '4px', color: '#cfa25d', textTransform: 'uppercase', marginBottom: '16px' }}>Get In Touch</p>
@@ -67,16 +98,16 @@ export default function ContactPage() {
           <motion.div {...fadeUp(0.1)}>
             <h2 style={{ fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '28px', color: 'white', marginBottom: '28px' }}>Contact Details</h2>
             {[
-              { icon: '📍', label: 'Address', value: 'Alfa Horizon, Office No: 4C, Tower 2, Floor 4, Goshree Rd, Opposite ICTT, Vallarpadam, Kochi, Kerala - 682504' },
-              { icon: '📞', label: 'Phone', value: '+91 9072512777' },
-              { icon: '📧', label: 'Email', value: 'skybanroofing@gmail.com' },
-              { icon: '📄', label: 'GSTIN', value: '32BCSPA5611C1Z6' },
+              { icon: <MapPinIcon />, label: 'Address', value: 'Alfa Horizon, Office No: 4C, Tower 2, Floor 4, Goshree Rd, Opposite ICTT, Vallarpadam, Kochi, Kerala - 682504' },
+              { icon: <PhoneIcon />, label: 'Phone', value: '+91 9072512777' },
+              { icon: <MailIcon />, label: 'Email', value: 'skybanroofing@gmail.com' },
+              { icon: <FileTextIcon />, label: 'GSTIN', value: '32BCSPA5611C1Z6' },
             ].map((item) => (
-              <div key={item.label} style={{ display: 'flex', gap: '16px', marginBottom: '24px', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '20px', marginTop: '2px' }}>{item.icon}</span>
+              <div key={item.label} style={{ display: 'flex', gap: '16px', marginBottom: '24px', alignItems: 'flex-start', background: 'rgba(255,255,255,0.02)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', background: 'rgba(207,162,93,0.1)', borderRadius: '50%', flexShrink: 0 }}>{item.icon}</span>
                 <div>
-                  <p style={{ fontFamily: 'Inter', fontWeight: 600, fontSize: '12px', color: '#cfa25d', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '4px' }}>{item.label}</p>
-                  <p style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '14px', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>{item.value}</p>
+                  <p style={{ fontFamily: 'Inter', fontWeight: 600, fontSize: '12px', color: '#cfa25d', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '6px' }}>{item.label}</p>
+                  <p style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '14px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6 }}>{item.value}</p>
                 </div>
               </div>
             ))}
@@ -102,8 +133,8 @@ export default function ContactPage() {
                 <button onClick={() => setStatus('idle')} style={{ marginTop: '24px', background: 'transparent', color: '#cfa25d', border: '1px solid #cfa25d', borderRadius: '9999px', padding: '10px 24px', fontFamily: 'Inter', fontWeight: 600, fontSize: '14px', cursor: 'pointer' }}>Send Another Request</button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '40px' }}>
-                <h3 style={{ fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '24px', color: 'white', marginBottom: '28px' }}>Request a Free Sample</h3>
+              <form onSubmit={handleSubmit} style={{ background: 'rgba(255,255,255,0.02)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '24px', padding: '48px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+                <h3 style={{ fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '28px', color: 'white', marginBottom: '32px' }}>Request a Free Sample</h3>
                 
                 {status === 'error' && (
                   <div style={{ background: 'rgba(255,80,80,0.1)', border: '1px solid rgba(255,80,80,0.4)', borderRadius: '8px', padding: '16px', marginBottom: '24px', color: '#ffb3b3', fontFamily: 'Inter', fontSize: '14px' }}>
@@ -155,8 +186,8 @@ export default function ContactPage() {
                     onBlur={(e) => (e.target.style.borderColor = 'rgba(255,255,255,0.14)')}
                   />
                 </div>
-                <motion.button type="submit" disabled={status === 'loading'} whileHover={{ scale: 1.03, boxShadow: '0 0 28px rgba(207,162,93,0.45)' }} whileTap={{ scale: 0.97 }}
-                  style={{ width: '100%', background: 'linear-gradient(135deg,#cfa25d,#b88c4b)', color: 'white', border: 'none', borderRadius: '9999px', padding: '16px', fontFamily: 'Inter', fontWeight: 700, fontSize: '15px', cursor: 'pointer', opacity: status === 'loading' ? 0.7 : 1 }}>
+                <motion.button type="submit" disabled={status === 'loading'} whileHover={{ scale: 1.02, backgroundColor: '#b88c4b' }} whileTap={{ scale: 0.98 }}
+                  style={{ width: '100%', background: '#cfa25d', color: '#0a1118', border: 'none', borderRadius: '8px', padding: '16px', fontFamily: 'Inter', fontWeight: 600, fontSize: '15px', letterSpacing: '0.5px', cursor: 'pointer', transition: 'all 0.3s ease', boxShadow: '0 4px 14px rgba(207, 162, 93, 0.15)', opacity: status === 'loading' ? 0.7 : 1 }}>
                   {status === 'loading' ? 'Sending...' : 'Submit Request →'}
                 </motion.button>
               </form>

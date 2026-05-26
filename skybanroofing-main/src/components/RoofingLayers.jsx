@@ -102,15 +102,15 @@ const RoofingLayers = () => {
         <div className="content-side-layers">
           <h2>SOPHISTICATED STYLE WITH THE STRENGTH OF STONE-COATED STEEL</h2>
           <p>
-            Skyban's proprietary stone-coating bonds natural stone granules to high-grade steel, 
-            delivering breathtaking styles backed by multi-layered strength. 
+            Skyban's proprietary stone-coating bonds natural stone granules to high-grade steel,
+            delivering breathtaking styles backed by multi-layered strength.
             Engineered for South India's tropical climate since 2006.
           </p>
-          
+
           <button className="cta-btn-layers" onClick={() => window.location.href = '/skybanroofing/contact'}>
             REQUEST A COMPLIMENTARY SAMPLE
           </button>
-          
+
           <div className="controls-layers">
             <button className="control-btn-layers" onClick={() => setIsExploded(false)}>Collapse View</button>
             <button className="control-btn-layers" onClick={() => setIsExploded(true)}>Explode View</button>
@@ -121,22 +121,22 @@ const RoofingLayers = () => {
           <div className={`explosion-wrapper-layers ${isExploded ? 'is-exploded' : ''}`} ref={wrapperRef}>
             <div className="layers-stack-layers">
               {layersData.map((layer, i) => (
-                <div 
-                  key={layer.id} 
+                <div
+                  key={layer.id}
                   className={`layer-item layer-id-${layer.id}`}
                   ref={(el) => (layerRefs.current[i] = el)}
                   onMouseEnter={() => setHighlightedIndex(i)}
                   onMouseLeave={() => setHighlightedIndex(null)}
-                  style={{ '--delay': `${i * 60}ms` }}
+                  style={{ transitionDelay: `${i * 60}ms` }}
                 />
               ))}
             </div>
 
             <svg className="connector-svg-layers" ref={svgRef}>
               {layersData.map((_, i) => (
-                <path 
-                  key={i} 
-                  className={`connector-line-layers line-${i + 1}`} 
+                <path
+                  key={i}
+                  className={`connector-line-layers line-${i + 1}`}
                   ref={(el) => (pathRefs.current[i] = el)}
                 />
               ))}
@@ -144,8 +144,8 @@ const RoofingLayers = () => {
 
             <div className="labels-container-layers">
               {layersData.map((layer, i) => (
-                <div 
-                  key={layer.id} 
+                <div
+                  key={layer.id}
                   className={`label-item-layer ${highlightedIndex === i ? 'is-highlight' : ''}`}
                   ref={(el) => (labelRefs.current[i] = el)}
                   style={{ transitionDelay: `${500 + i * 100}ms` }}

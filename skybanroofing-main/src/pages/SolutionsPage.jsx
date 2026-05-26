@@ -5,16 +5,30 @@ const solutions = [
   {
     id: 'gutters',
     title: 'uPVC Rain Gutters',
-    desc: 'Our high-performance uPVC rain gutters are designed for the heaviest tropical rains. They feature a leak-proof interlocking system, UV stabilization for long life, and high-flow capacity to protect your building foundation.',
-    features: ['Leak Proof Joints', 'UV Stabilized Material', 'High Flow Capacity', 'Low Maintenance'],
+    desc: 'Our high-performance uPVC rain gutters are designed to withstand the heaviest tropical rains. Engineered with advanced polymers, they feature a completely leak-proof interlocking system, superior UV stabilization to prevent fading or brittleness, and an exceptionally high-flow capacity to safeguard your building\'s foundation from water damage over decades.',
+    features: ['Leak Proof Joints', 'UV Stabilized Material', 'High Flow Capacity', 'Low Maintenance', 'Corrosion Resistant', 'Color Fastness'],
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200'
   },
   {
     id: 'ventilation',
-    title: 'Roof Ventilation',
-    desc: 'Maintain a cool and healthy indoor environment with our advanced ridge venting and turbine systems. Designed to exhaust hot air and prevent moisture buildup in the roof cavity.',
-    features: ['Natural Airflow', 'Heat Reduction', 'Moisture Control', 'Quiet Operation'],
+    title: 'Advanced Roof Ventilation',
+    desc: 'Maintain a perfectly balanced, cool, and healthy indoor environment with our state-of-the-art ridge venting and turbine systems. Specifically designed to continuously exhaust trapped hot air and actively prevent moisture buildup in the roof cavity, our ventilation systems extend the lifespan of your roof while drastically reducing your cooling costs.',
+    features: ['Natural Airflow', 'Heat Reduction', 'Moisture Control', 'Quiet Operation', 'Energy Efficient', 'Weatherproof Design'],
     image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'insulation',
+    title: 'Premium Thermal Insulation',
+    desc: 'Our multi-layered thermal insulation solutions act as an impenetrable barrier against extreme heat. By reflecting radiant heat away from your building and trapping cool air inside, our insulation significantly improves indoor thermal comfort. This leads to reduced reliance on air conditioning and substantial long-term energy savings.',
+    features: ['High R-Value', 'Radiant Heat Reflection', 'Fire Retardant', 'Eco-Friendly Materials', 'Acoustic Dampening', 'Long Lifespan'],
+    image: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    id: 'waterproofing',
+    title: 'Complete Waterproofing Systems',
+    desc: 'Protect your structure from the harshest monsoons with our comprehensive waterproofing treatments. From the foundation to the peak of the roof, we utilize advanced elastomeric membranes and deep-penetrating sealants that bridge cracks and create a seamless, 100% watertight shield against moisture intrusion and structural decay.',
+    features: ['Elastomeric Membranes', 'Crack Bridging', 'Seamless Protection', 'Fungus Resistant', 'Breathable Sealants', 'Guaranteed Protection'],
+    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=1200'
   }
 ];
 
@@ -33,7 +47,7 @@ export default function SolutionsPage() {
         <motion.div {...fadeUp()}>
           <p style={{ fontFamily: 'Inter', fontWeight: 600, fontSize: '12px', letterSpacing: '4px', color: '#cfa25d', textTransform: 'uppercase', marginBottom: '16px' }}>Total Protection</p>
           <h1 style={{ fontFamily: 'Playfair Display', fontWeight: 700, fontSize: 'clamp(36px, 6vw, 64px)', color: 'white', marginBottom: '24px', lineHeight: 1.1 }}>
-            Advanced Drainage &<br />Ventilation Solutions
+            Comprehensive Roofing<br />& Protection Solutions
           </h1>
           <p style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '17px', color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto', lineHeight: 1.7 }}>
             Protect your home from the top down. Our integrated solutions ensure perfect water management and optimal thermal comfort.

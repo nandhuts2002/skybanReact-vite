@@ -8,12 +8,12 @@ const Footer = () => {
   const navigate = useNavigate();
   return (
     <footer id="footer" style={{ position: 'relative', zIndex: 10, background: '#0a0a0a', color: 'rgba(255,255,255,0.65)', padding: '80px 0 40px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
         <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr', gap: '32px', marginBottom: '64px' }}>
           {/* Brand */}
           <div>
             <div style={{ marginBottom: '32px' }}>
-              <img src={logo} alt="Skyban Roofing Systems" style={{ height: '60px', width: 'auto' }} />
+              <img src={logo} alt="Skyban Roofing Systems" style={{ height: '60px', width: 'auto', marginLeft: '-8px' }} />
             </div>
             <p style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '14px', lineHeight: 1.75, maxWidth: '280px', marginBottom: '28px' }}>
               Setting the standard for luxury roofing systems with the unmatched durability of stone-coated steel.
@@ -41,8 +41,11 @@ const Footer = () => {
           <div>
             <h4 style={{ fontFamily: 'Inter', fontWeight: 600, fontSize: '13px', color: 'white', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>Solutions</h4>
             {[
-              { label: 'Roofing Tiles', to: '/products' },
-              { label: 'Rain Gutters', to: '/solutions' },
+              { label: 'Stone Coated Tiles', to: '/products' },
+              { label: 'uPVC Rain Gutters', to: '/solutions' },
+              { label: 'Roof Ventilation', to: '/solutions' },
+              { label: 'Thermal Insulation', to: '/solutions' },
+              { label: 'Waterproofing', to: '/solutions' },
             ].map((item) => (
               <div key={item.label} style={{ marginBottom: '14px' }}>
                 <Link

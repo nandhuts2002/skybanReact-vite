@@ -3,16 +3,16 @@ const BASE = import.meta.env.BASE_URL;
 export const galleryItems = [
   {
     id: 1,
-    title: 'Luxury Villa',
+    title: 'Tropical Kerala Villa',
     location: 'Kerala',
     product: 'Shake Collection',
     colour: 'Ashwood',
-    image: `${BASE}hero_bg_sunset_mansion.png`,
+    image: `${BASE}kerala_villa.png`,
     category: 'RESIDENTIAL'
   },
   {
     id: 2,
-    title: 'Modern Home',
+    title: 'Classic Stone Residence',
     location: 'Bangalore',
     product: 'Classic Collection',
     colour: 'Midnight',
@@ -21,7 +21,7 @@ export const galleryItems = [
   },
   {
     id: 3,
-    title: 'Contemporary Residence',
+    title: 'Modern Wood & Glass Home',
     location: 'Kochi',
     product: 'Bond Collection',
     colour: 'Obsidian',
@@ -30,7 +30,7 @@ export const galleryItems = [
   },
   {
     id: 4,
-    title: 'Premium Villa',
+    title: 'Mediterranean Estate',
     location: 'Hyderabad',
     product: 'Roman Collection',
     colour: 'Terracotta',
@@ -39,7 +39,7 @@ export const galleryItems = [
   },
   {
     id: 5,
-    title: 'Coastal Mansion',
+    title: 'Suburban Family Home',
     location: 'Chennai',
     product: 'Shingle Collection',
     colour: 'Charcoal',
@@ -48,7 +48,7 @@ export const galleryItems = [
   },
   {
     id: 6,
-    title: 'Industrial Warehouse',
+    title: 'Commercial Factory',
     location: 'Coimbatore',
     product: 'Bond Collection',
     colour: 'Slate Grey',
@@ -57,7 +57,7 @@ export const galleryItems = [
   },
   {
     id: 7,
-    title: 'Heritage Estate',
+    title: 'Rustic Country Home',
     location: 'Mysore',
     product: 'Shake Collection',
     colour: 'Brown Bark',
@@ -66,11 +66,47 @@ export const galleryItems = [
   },
   {
     id: 8,
-    title: 'Eco Friendly Home',
+    title: 'Woodland Cabin',
     location: 'Wayand',
     product: 'Shingle Collection',
     colour: 'Forest Green',
     image: `${BASE}roofing_durability.png`,
+    category: 'RESIDENTIAL'
+  },
+  {
+    id: 9,
+    title: 'Modern Office Park',
+    location: 'Bangalore',
+    product: 'Bond Collection',
+    colour: 'Obsidian',
+    image: `${BASE}commercial_office.png`,
+    category: 'COMMERCIAL'
+  },
+  {
+    id: 10,
+    title: 'Luxury Retail Plaza',
+    location: 'Chennai',
+    product: 'Roman Collection',
+    colour: 'Terracotta',
+    image: `${BASE}commercial_retail.png`,
+    category: 'COMMERCIAL'
+  },
+  {
+    id: 11,
+    title: 'Mid-Century Bungalow',
+    location: 'Kerala',
+    product: 'Classic Collection',
+    colour: 'Midnight',
+    image: `${BASE}residential_bungalow.png`,
+    category: 'RESIDENTIAL'
+  },
+  {
+    id: 12,
+    title: 'Modern Farmhouse',
+    location: 'Pune',
+    product: 'Shake Collection',
+    colour: 'Ashwood',
+    image: `${BASE}residential_farmhouse.png`,
     category: 'RESIDENTIAL'
   }
 ];
