@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const collections = [
   {
@@ -49,6 +49,19 @@ const fadeUp = (delay = 0) => ({
 
 export default function ProductsPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 150);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
 
   return (
     <div style={{ paddingTop: '100px', minHeight: '100vh', background: '#0a1118', overflowX: 'hidden' }}>
@@ -75,6 +88,7 @@ export default function ProductsPage() {
           {collections.map((col, index) => (
             <motion.div
               key={col.id}
+              id={col.id}
               initial={{ opacity: 0, y: 50, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}

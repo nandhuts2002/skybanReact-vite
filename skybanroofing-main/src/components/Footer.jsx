@@ -26,7 +26,7 @@ const Footer = () => {
             {['Shingle', 'Shake', 'Classic', 'Bond', 'Roman'].map((item) => (
               <div key={item} style={{ marginBottom: '14px' }}>
                 <Link
-                  to="/products"
+                  to={`/products#${item.toLowerCase()}`}
                   style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '14px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
                   onMouseEnter={(e) => (e.target.style.color = '#cfa25d')}
                   onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.6)')}
@@ -41,16 +41,17 @@ const Footer = () => {
           <div>
             <h4 style={{ fontFamily: 'Inter', fontWeight: 600, fontSize: '13px', color: 'white', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>Solutions</h4>
             {[
-              { label: 'Stone Coated Tiles', to: '/products' },
-              { label: 'uPVC Rain Gutters', to: '/solutions' },
-              { label: 'Roof Ventilation', to: '/solutions' },
-              { label: 'Thermal Insulation', to: '/solutions' },
-              { label: 'Waterproofing', to: '/solutions' },
+              { label: 'Stone Coated Tiles', to: '/solutions#stone-tiles' },
+              { label: 'uPVC Rain Gutters', to: '/solutions#gutters' },
+              { label: 'Roof Ventilation', to: '/solutions#ventilation' },
+              { label: 'Thermal Insulation', to: '/solutions#insulation' },
+              { label: 'Waterproofing', to: '/solutions#waterproofing' },
             ].map((item) => (
               <div key={item.label} style={{ marginBottom: '14px' }}>
                 <Link
                   to={item.to}
                   style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '14px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
+                  onClick={() => window.scrollTo(0, 0)}
                   onMouseEnter={(e) => (e.target.style.color = '#cfa25d')}
                   onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.6)')}
                 >
@@ -64,25 +65,15 @@ const Footer = () => {
           <div>
             <h4 style={{ fontFamily: 'Inter', fontWeight: 600, fontSize: '13px', color: 'white', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '24px' }}>Company</h4>
             {[
-              { label: 'About Us', to: '#footer' },
+              { label: 'About Us', to: '/about' },
               { label: 'Our Process', to: '/services' },
-              { label: 'Warranty', to: '/about' },
-              { label: 'Certifications', to: '/about' },
-              { label: 'Contact Us', to: '#footer' },
+              { label: 'Contact Us', to: '/contact' },
             ].map((item) => (
               <div key={item.label} style={{ marginBottom: '14px' }}>
                 <Link
                   to={item.to}
                   style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '14px', color: 'rgba(255,255,255,0.6)', textDecoration: 'none', transition: 'color 0.2s' }}
-                  onClick={(e) => {
-                    if (item.to.startsWith('#')) {
-                      e.preventDefault();
-                      const target = document.getElementById(item.to.substring(1));
-                      if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }
-                  }}
+                  onClick={() => window.scrollTo(0, 0)}
                   onMouseEnter={(e) => (e.target.style.color = '#cfa25d')}
                   onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.6)')}
                 >
@@ -104,23 +95,10 @@ const Footer = () => {
         </div>
 
         {/* Divider & Copyright */}
-        <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <p style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '13px' }}>
+        <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '32px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+          <p style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '13px', textAlign: 'center' }}>
             &copy; {currentYear} Skyban Roofing Systems. All rights reserved.
           </p>
-          <div style={{ display: 'flex', gap: '24px' }}>
-            {['Privacy Policy', 'Terms', 'Sitemap'].map((item) => (
-              <a
-                key={item}
-                href="#"
-                style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '13px', color: 'rgba(255,255,255,0.5)', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseEnter={(e) => (e.target.style.color = '#cfa25d')}
-                onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.5)')}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

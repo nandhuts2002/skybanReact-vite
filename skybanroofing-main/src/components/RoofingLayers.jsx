@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './RoofingLayers.css';
 
 const layersData = [
@@ -13,6 +14,7 @@ const layersData = [
 ];
 
 const RoofingLayers = () => {
+  const navigate = useNavigate();
   const [isExploded, setIsExploded] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(null);
   const sectionRef = useRef(null);
@@ -107,7 +109,7 @@ const RoofingLayers = () => {
             Engineered for South India's tropical climate since 2006.
           </p>
 
-          <button className="cta-btn-layers" onClick={() => window.location.href = '/skybanroofing/contact'}>
+          <button className="cta-btn-layers" onClick={() => navigate('/contact')}>
             REQUEST A COMPLIMENTARY SAMPLE
           </button>
 

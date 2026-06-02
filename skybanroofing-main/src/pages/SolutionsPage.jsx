@@ -1,34 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const solutions = [
+  {
+    id: 'stone-tiles',
+    title: 'Premium Stone Coated Tiles',
+    desc: 'Setting the standard for luxury roofing systems, our stone coated steel tiles provide unmatched durability and timeless aesthetic appeal. Engineered from high-tensile Galvalume steel and finished with a proprietary mineral stone-coat, they are guaranteed to outlast traditional roofing materials while offering superior resistance to extreme weather, fading, and fire.',
+    features: ['50-Year Warranty', 'Extreme Weather Resistance', 'Fire Retardant', 'Lightweight Structure', 'Sound Dampening', 'Eco-Friendly'],
+    image: `${import.meta.env.BASE_URL}sol_stone_tiles.png`
+  },
   {
     id: 'gutters',
     title: 'uPVC Rain Gutters',
     desc: 'Our high-performance uPVC rain gutters are designed to withstand the heaviest tropical rains. Engineered with advanced polymers, they feature a completely leak-proof interlocking system, superior UV stabilization to prevent fading or brittleness, and an exceptionally high-flow capacity to safeguard your building\'s foundation from water damage over decades.',
     features: ['Leak Proof Joints', 'UV Stabilized Material', 'High Flow Capacity', 'Low Maintenance', 'Corrosion Resistant', 'Color Fastness'],
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200'
+    image: `${import.meta.env.BASE_URL}sol_gutters.png`
   },
   {
     id: 'ventilation',
     title: 'Advanced Roof Ventilation',
     desc: 'Maintain a perfectly balanced, cool, and healthy indoor environment with our state-of-the-art ridge venting and turbine systems. Specifically designed to continuously exhaust trapped hot air and actively prevent moisture buildup in the roof cavity, our ventilation systems extend the lifespan of your roof while drastically reducing your cooling costs.',
     features: ['Natural Airflow', 'Heat Reduction', 'Moisture Control', 'Quiet Operation', 'Energy Efficient', 'Weatherproof Design'],
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200'
+    image: `${import.meta.env.BASE_URL}sol_ventilation.png`
   },
   {
     id: 'insulation',
     title: 'Premium Thermal Insulation',
     desc: 'Our multi-layered thermal insulation solutions act as an impenetrable barrier against extreme heat. By reflecting radiant heat away from your building and trapping cool air inside, our insulation significantly improves indoor thermal comfort. This leads to reduced reliance on air conditioning and substantial long-term energy savings.',
     features: ['High R-Value', 'Radiant Heat Reflection', 'Fire Retardant', 'Eco-Friendly Materials', 'Acoustic Dampening', 'Long Lifespan'],
-    image: 'https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&q=80&w=1200'
+    image: `${import.meta.env.BASE_URL}sol_insulation.png`
   },
   {
     id: 'waterproofing',
     title: 'Complete Waterproofing Systems',
     desc: 'Protect your structure from the harshest monsoons with our comprehensive waterproofing treatments. From the foundation to the peak of the roof, we utilize advanced elastomeric membranes and deep-penetrating sealants that bridge cracks and create a seamless, 100% watertight shield against moisture intrusion and structural decay.',
     features: ['Elastomeric Membranes', 'Crack Bridging', 'Seamless Protection', 'Fungus Resistant', 'Breathable Sealants', 'Guaranteed Protection'],
-    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=1200'
+    image: `${import.meta.env.BASE_URL}sol_waterproofing.png`
   }
 ];
 
@@ -40,6 +48,21 @@ const fadeUp = (delay = 0) => ({
 });
 
 export default function SolutionsPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 150);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
   return (
     <div style={{ paddingTop: '120px', minHeight: '100vh', background: '#0a1118', color: 'white' }}>
       {/* Header */}
@@ -58,7 +81,7 @@ export default function SolutionsPage() {
       {/* Solutions List */}
       <section style={{ padding: '0 24px 120px', maxWidth: '1200px', margin: '0 auto' }}>
         {solutions.map((sol, i) => (
-          <div key={sol.id} style={{ 
+          <div key={sol.id} id={sol.id} style={{ 
             display: 'grid', 
             gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
             gap: '60px', 
@@ -108,7 +131,7 @@ export default function SolutionsPage() {
             <h2 style={{ fontFamily: 'Playfair Display', fontSize: '38px', fontWeight: 700, marginBottom: '20px' }}>Need a complete solution?</h2>
             <p style={{ fontSize: '18px', color: '#555', marginBottom: '40px' }}>Our engineers can design a custom drainage and ventilation plan for your building.</p>
             <button
-              onClick={() => window.location.href = '/skybanroofing/contact'}
+              onClick={() => navigate('/contact')}
               style={{
                 background: '#0a0a0a',
                 color: 'white',

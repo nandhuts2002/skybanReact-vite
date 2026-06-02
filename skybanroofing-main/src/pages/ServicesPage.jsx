@@ -1,13 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Home, Building2, Wrench, Leaf, ShieldCheck, Ruler } from 'lucide-react';
 
 const services = [
-  { icon: '🏠', title: 'Residential Roofing', desc: 'Complete installation of stone-coated steel roof systems for homes of all sizes. Includes structural assessment, weatherproofing, and lifetime warranty.' },
-  { icon: '🏢', title: 'Commercial Roofing', desc: 'Industrial-grade roofing solutions for commercial buildings, warehouses, and large-scale estates with ISO-certified installations.' },
-  { icon: '🔧', title: 'Roof Repair & Restoration', desc: 'Fast, professional repair services for damaged tiles, leaks, and aging rooftops. We restore without full replacement wherever possible.' },
-  { icon: '🌿', title: 'Green Roof Systems', desc: 'Eco-friendly roofing solutions with thermal insulation layers, solar-ready mounting, and UV-reflective coatings for energy efficiency.' },
-  { icon: '🛡️', title: 'Waterproofing', desc: '100% waterproof underlayment systems tested to international standards. Prevents moisture ingress for the lifetime of your roof.' },
-  { icon: '📐', title: 'Custom Fabrication', desc: 'Bespoke tile profiles, ridge caps, and flashings custom-fabricated to match any architectural style or heritage design requirement.' },
+  { icon: <Home size={36} strokeWidth={1.5} color="#cfa25d" />, title: 'Residential Roofing', desc: 'Complete installation of stone-coated steel roof systems for homes of all sizes. Includes structural assessment, weatherproofing, and lifetime warranty.' },
+  { icon: <Building2 size={36} strokeWidth={1.5} color="#cfa25d" />, title: 'Commercial Roofing', desc: 'Industrial-grade roofing solutions for commercial buildings, warehouses, and large-scale estates with ISO-certified installations.' },
+  { icon: <Wrench size={36} strokeWidth={1.5} color="#cfa25d" />, title: 'Roof Repair & Restoration', desc: 'Fast, professional repair services for damaged tiles, leaks, and aging rooftops. We restore without full replacement wherever possible.' },
+  { icon: <Leaf size={36} strokeWidth={1.5} color="#cfa25d" />, title: 'Green Roof Systems', desc: 'Eco-friendly roofing solutions with thermal insulation layers, solar-ready mounting, and UV-reflective coatings for energy efficiency.' },
+  { icon: <ShieldCheck size={36} strokeWidth={1.5} color="#cfa25d" />, title: 'Waterproofing', desc: '100% waterproof underlayment systems tested to international standards. Prevents moisture ingress for the lifetime of your roof.' },
+  { icon: <Ruler size={36} strokeWidth={1.5} color="#cfa25d" />, title: 'Custom Fabrication', desc: 'Bespoke tile profiles, ridge caps, and flashings custom-fabricated to match any architectural style or heritage design requirement.' },
 ];
 
 const steps = [
