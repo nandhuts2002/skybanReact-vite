@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 import RequestCallButton from './components/RequestCallButton';
 
@@ -18,6 +20,11 @@ import SolutionsPage from './pages/SolutionsPage';
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+      <Helmet>
+        <title>Skyban Roofing | Premium Roofing Solutions</title>
+        <meta name="description" content="Skyban Roofing provides top-quality roofing solutions, repairs, and installations. Contact us today for a free quote!" />
+      </Helmet>
 
 
       {/* Floating Animated Call Button */}

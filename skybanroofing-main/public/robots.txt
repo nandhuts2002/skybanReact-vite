@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skybanroofings.com/sitemap.xml
