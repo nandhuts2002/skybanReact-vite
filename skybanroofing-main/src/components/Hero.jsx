@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const icons = {
-  quality: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
-  weather: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/><circle cx="12" cy="12" r="4"/></svg>,
-  time: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>,
-  house: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
-  support: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>,
+  quality: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>,
+  weather: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" /><circle cx="12" cy="12" r="4" /></svg>,
+  time: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>,
+  house: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>,
+  support: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#cfa25d" strokeWidth="1.8"><path d="M3 18v-6a9 9 0 0 1 18 0v6" /><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" /></svg>,
 };
 
 const Hero = () => {
@@ -15,39 +15,39 @@ const Hero = () => {
 
   return (
     <div className="relative w-full flex flex-col bg-transparent" style={{ minHeight: '100vh' }}>
-      
+
       {/* Background is now handled by VideoBackground component in HomePage.jsx */}
 
       {/* Main Content — pushed below top bar + navbar */}
       <div className="hero-content-area relative z-10 flex-1 flex items-center" style={{ paddingTop: '120px', paddingLeft: 'clamp(24px, 6vw, 100px)', paddingRight: 'clamp(24px, 6vw, 100px)', paddingBottom: '40px' }}>
         <div style={{ maxWidth: '680px' }}>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
             style={{ fontFamily: 'Inter', fontWeight: 700, fontSize: '12px', letterSpacing: '5px', color: '#cfa25d', textTransform: 'uppercase', marginBottom: '22px' }}
           >
             SINCE 2006
           </motion.p>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
             style={{ fontFamily: 'Inter', fontWeight: 800, fontSize: 'clamp(42px, 7vw, 80px)', lineHeight: 1.05, color: 'white', letterSpacing: '-1px', marginBottom: '0' }}
           >
-            EXPERIENCE THE EXCELLENCE<br/>
-            <span style={{ color: '#cfa25d' }}>IN ROOFING</span>
+            SKYBAN ROOFING<br />
+            <span style={{ color: '#cfa25d' }}>SYSTEMS</span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.45 }}
             style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '16px', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7, marginTop: '24px', marginBottom: '36px', maxWidth: '480px' }}
           >
-            <div style={{ fontFamily: 'Italiana', fontSize: '28px', color: 'white', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '16px' }}>
-              skyban roofing systems
+            <div style={{ fontFamily: 'Italiana', fontSize: '28px', color: 'white', letterSpacing: '4px', textTransform: 'uppercase', marginBottom: '6px', fontWeight: 500 }}>
+              Skyban stone coated roofing tiles and Upvc Raingutters
             </div>
-            Skyban stone coated roofing tiles and Upvc Raingutters
+            EXPERIENCE THE EXCELLENCE IN ROOFING
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.6 }}
             className="hero-btns"
             style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}
@@ -95,8 +95,8 @@ const Hero = () => {
             { icon: icons.house, title: 'Low Maintenance', sub: 'Easy to clean & maintain' },
             { icon: icons.support, title: 'Expert Support', sub: 'Dedicated technical support' },
           ].map((item, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="hero-feature-item"
               style={{
                 display: 'flex', alignItems: 'center', gap: '12px',

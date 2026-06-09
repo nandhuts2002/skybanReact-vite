@@ -89,7 +89,17 @@ const Footer = () => {
             <div style={{ fontFamily: 'Inter', fontWeight: 300, fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75 }}>
               <p>skybanroofing@gmail.com</p>
               <p style={{ marginTop: '8px' }}>+91 9072512777</p>
-              <p style={{ marginTop: '8px' }}>Alfa Horizon, Kochi, Kerala - 682504</p>
+              <p style={{ marginTop: '8px' }}>
+                <a
+                  href="https://www.google.com/maps/place/Skyban+Roofing/data=!4m2!3m1!1s0x0:0x7280479ab5c97f58?sa=X&ved=1t:2428&ictx=111"
+                  rel="noreferrer"
+                  style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}
+                  onMouseEnter={(e) => (e.target.style.color = '#cfa25d')}
+                  onMouseLeave={(e) => (e.target.style.color = 'rgba(255,255,255,0.6)')}
+                >
+                  Alfa Horizon, Office No: 4C, Tower 2, Floor 4, Goshree Rd, Opposite ICTT, Vallarpadam, Kochi, Kerala - 682504
+                </a>
+              </p>
             </div>
           </div>
         </div>

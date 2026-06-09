@@ -6,11 +6,11 @@ import logo from '../assets/skyban-logo.png';
 
 const links = [
   { label: 'HOME', to: '/' },
-  { label: 'ABOUT US', to: '#footer' },
+  { label: 'ABOUT US', to: '/about' },
   { label: 'PRODUCTS', to: '/products' },
   { label: 'SOLUTIONS', to: '/solutions' },
   { label: 'GALLERY', to: '/gallery' },
-  { label: 'CONTACT US', to: '#footer' },
+  { label: 'CONTACT US', to: '/contact' },
 ];
 
 const Navbar = () => {

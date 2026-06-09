@@ -52,6 +52,30 @@ const inputStyle = {
   boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)'
 };
 
+function SkybanMap() {
+  return (
+    <div
+      style={{
+        width: '100%',
+        height: '450px',
+        overflow: 'hidden',
+        borderRadius: '12px',
+      }}
+    >
+      <iframe
+        title="Skyban Roofing Location"
+        src="https://maps.google.com/maps?q=Skyban%20Roofing&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        width="100%"
+        height="100%"
+        style={{ border: 0 }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </div>
+  );
+}
+
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', type: 'sample', product: 'shake', message: '' });
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
@@ -98,7 +122,7 @@ export default function ContactPage() {
           <motion.div {...fadeUp(0.1)}>
             <h2 style={{ fontFamily: 'Playfair Display', fontWeight: 700, fontSize: '28px', color: 'white', marginBottom: '28px' }}>Contact Details</h2>
             {[
-              { icon: <MapPinIcon />, label: 'Address', value: 'Alfa Horizon, Office No: 4C, Tower 2, Floor 4, Goshree Rd, Opposite ICTT, Vallarpadam, Kochi, Kerala - 682504' },
+              { icon: <MapPinIcon />, label: 'Address', value: 'Skyban Roofing, Kochi, Kerala' },
               { icon: <PhoneIcon />, label: 'Phone', value: '+91 9072512777' },
               { icon: <MailIcon />, label: 'Email', value: 'skybanroofing@gmail.com' },
               { icon: <FileTextIcon />, label: 'GSTIN', value: '32BCSPA5611C1Z6' },
@@ -111,6 +135,10 @@ export default function ContactPage() {
                 </div>
               </div>
             ))}
+
+            <div style={{ marginTop: '8px' }}>
+              <SkybanMap />
+            </div>
 
             {/* Certifications */}
             <div style={{ marginTop: '32px', padding: '24px', background: 'rgba(207,162,93,0.08)', border: '1px solid rgba(207,162,93,0.2)', borderRadius: '14px' }}>

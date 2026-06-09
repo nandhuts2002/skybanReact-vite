@@ -491,7 +491,7 @@ h6 {
 @media (max-width: 768px) {
   /* Hero content area */
   .hero-content-area {
-    padding-top: 100px !important;
+    padding-top: 140px !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
     padding-bottom: 32px !important;
